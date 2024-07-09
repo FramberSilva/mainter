@@ -36,17 +36,6 @@ function mainter_lang(){
 add_action('after_setup_theme', 'mainter_lang');
 
 
-/* Remove Gutenberg on Widgets  */
-
-function asap_ce_widgets() {
-  if ( get_theme_mod('asap_classic_editor_widgets') )
-  {
-    remove_theme_support( 'widgets-block-editor' );
-  }
-}
-
-add_action( 'after_setup_theme', 'asap_ce_widgets' );
-
 // @Registrar estilos
 function wp_enqueue_styles() {
     wp_enqueue_style( 'style', get_stylesheet_uri() );
@@ -106,4 +95,3 @@ add_filter( 'use_widgets_block_editor', '__return_false' );
 /** ! Eliminar Gutenberg **/
 add_filter( 'use_block_editor_for_post_type', '__return_false', 100);
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
-add_filter( 'use_widgets_block_editor', '__return_false' );
